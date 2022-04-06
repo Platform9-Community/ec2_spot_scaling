@@ -4,4 +4,4 @@ metadata:
   name: spot-config
   namespace: spot
 data:
-  desired_scale: "2"
+  desired_scale: "0"
