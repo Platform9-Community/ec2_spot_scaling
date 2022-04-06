@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: aws-cli-spot-job
+  namespace: ${NAMESPACE}
+  labels:
+    k8s-app: spot
+spec:
+  template:
+    spec:
+      containers:
+      - name: aws-cli
+        image: amazon/aws-cli:${AWS_CLI_VERSION}
+        command:
+          - aws
+          - autoscaling
+          - set-desired-capacity
+          - --auto-scaling-group-name
+          - ${SPOT_ASG}
+          - --desired-capacity
+          - "${DESIRED_CAPACITY_DOWN}"
+          - --region
+          - ${AWS_DEFAULT_REGION}
+        env:
+         - name: AWS_SECRET_ACCESS_KEY
+           valueFrom:
+             secretKeyRef:
+               name: aws-secret-access-key
+               key: key
+         - name: AWS_SECRET_KEY_ID
+           valueFrom:
+             secretKeyRef:
+               name: aws-access-key-id
+               key: id
+      restartPolicy: Never
+  backoffLimit: 1
