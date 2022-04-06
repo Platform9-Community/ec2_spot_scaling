@@ -18,7 +18,7 @@ spec:
           - --auto-scaling-group-name
           - spot-worker-89c1d062-1629-48ab-bfb3-b878ced8832f
           - --desired-capacity
-          - "$(DESIRED_CAPACITY)"
+          - "0"
           - --region
           - us-east-1
         env:
