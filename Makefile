@@ -20,4 +20,6 @@ clean:
 apply:
 	envsubst < 01_namespace.yaml | kubectl apply --context $(CONTEXT) --kubeconfig $(KUBECONFIG) -f -
 	envsubst < 02_secrets.yaml | kubectl apply --context $(CONTEXT) --kubeconfig $(KUBECONFIG) -f -
-	envsubst < 03_job.yaml | kubectl apply --context $(CONTEXT) --kubeconfig $(KUBECONFIG) -f -
+	cd kustomize && kustomize build | kubectl apply --context $(CONTEXT) --kubeconfig $(KUBECONFIG) -f -
+
+#envsubst < 03_job.yaml | kubectl apply --context $(CONTEXT) --kubeconfig $(KUBECONFIG) -f -
