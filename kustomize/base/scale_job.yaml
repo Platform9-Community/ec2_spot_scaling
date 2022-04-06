@@ -3,8 +3,6 @@ kind: Job
 metadata:
   name: aws-cli-spot-job
   namespace: spot
-  labels:
-    k8s-app: spot
 spec:
   template:
     spec:
