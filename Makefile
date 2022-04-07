@@ -26,9 +26,21 @@ pre:
 	kubectl delete job aws-cli-spot-job -n $(NAMESPACE) --context $(CONTEXT) --kubeconfig $(KUBECONFIG) 2>/dev/null || true
 
 up: pre
+	@echo ""
+	@echo "Scaling up to desired scale size of $(SCALE_SIZE_UP) spot instances in the spot-worker ASG"
+	@echo ""
 	$(eval SCALE_SIZE=$(SCALE_SIZE_UP))
 	envsubst < scale.yaml | kubectl apply --context $(CONTEXT) --kubeconfig $(KUBECONFIG) -f -
+	kubectl --context $(CONTEXT) --kubeconfig $(KUBECONFIG) wait -n $(NAMESPACE) \
+		--for=condition=complete job/aws-cli-spot-job --timeout=120s
+	kubectl --context $(CONTEXT) --kubeconfig $(KUBECONFIG) get pods -n $(NAMESPACE)
 
 down: pre
+	@echo ""
+	@echo "Scaling down to desired scale size of $(SCALE_SIZE_DOWN) spot instances in the spot-worker ASG"
+	@echo ""
 	$(eval SCALE_SIZE=$(SCALE_SIZE_DOWN))
 	envsubst < scale.yaml | kubectl apply --context $(CONTEXT) --kubeconfig $(KUBECONFIG) -f -
+	kubectl --context $(CONTEXT) --kubeconfig $(KUBECONFIG) wait -n $(NAMESPACE) \
+		--for=condition=complete job/aws-cli-spot-job --timeout=120s
+	kubectl --context $(CONTEXT) --kubeconfig $(KUBECONFIG) get pods -n $(NAMESPACE)
