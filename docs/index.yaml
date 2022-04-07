@@ -3,12 +3,12 @@ entries:
   ec2-spot-scaling:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-04-07T13:09:14.279576372-04:00"
+    created: "2022-04-07T13:23:05.383119288-04:00"
     description: A Helm chart for Kubernetes
-    digest: 9092f71a47fffaf03d970bf895032d403f234d0b150e1fb7412dc3601054bcb6
+    digest: 561aa8756a0214c1df3d660634750bd74f10b9e1eed6fd5e3ae69fb0ecba4527
     name: ec2-spot-scaling
     type: application
     urls:
     - https://platform9-community.github.io/ec2_spot_scaling/ec2-spot-scaling-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-07T13:09:14.279163682-04:00"
+generated: "2022-04-07T13:23:05.382418967-04:00"
