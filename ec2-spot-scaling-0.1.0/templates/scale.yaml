@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: aws-cli-spot-job-{{ randAlphaNum 5 | lower }}
+  labels:
+    {{- include "ec2-spot-scaling.labels" . | nindent 4 }}
+    k8s-app: spot
+spec:
+  template:
+    spec:
+      containers:
+      - name: aws-cli
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        command:
+          - aws
+          - autoscaling
+          - set-desired-capacity
+          - --auto-scaling-group-name
+          - "{{ .Values.aws.SPOT_ASG  }}"
+          - --desired-capacity
+          - "{{ .Values.aws.SCALE_SIZE }}"
+          - --region
+          - "{{ .Values.aws.AWS_DEFAULT_REGION }}"
+        env:
+         - name: AWS_SECRET_ACCESS_KEY
+           valueFrom:
+             secretKeyRef:
+               name: aws-secret-access-key
+               key: key
+         - name: AWS_SECRET_KEY_ID
+           valueFrom:
+             secretKeyRef:
+               name: aws-access-key-id
+               key: id
+      restartPolicy: Never
+  backoffLimit: 1
