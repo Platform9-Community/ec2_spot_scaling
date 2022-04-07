@@ -20,11 +20,6 @@ spec:
           - --region
           - us-east-1
         env:
-         - name: DESIRED_CAPACITY
-           valueFrom:
-            configMapKeyRef:
-              name: spot-config
-              key: desired_scale
          - name: AWS_SECRET_ACCESS_KEY
            valueFrom:
              secretKeyRef:
