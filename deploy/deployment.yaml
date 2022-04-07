@@ -29,7 +29,7 @@ spec:
           - "$(DESIRED_CAPACITY)"
           - --region
           - us-east-1
-          - &&
+          - "&&"
           - sleep
           - inf
         env:
