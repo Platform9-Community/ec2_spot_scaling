@@ -9,6 +9,6 @@ entries:
     name: ec2-spot-scaling
     type: application
     urls:
-    - ec2-spot-scaling-0.1.0.tgz
+    - https://github.com/Platform9-Community/ec2_spot_scaling/raw/main/ec2-spot-scaling-0.1.0.tgz
     version: 0.1.0
 generated: "2022-04-07T11:06:30.345922381-04:00"
