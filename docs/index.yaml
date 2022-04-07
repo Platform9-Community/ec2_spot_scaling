@@ -3,9 +3,9 @@ entries:
   ec2-spot-scaling:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-04-07T14:32:40.453615585-04:00"
+    created: "2022-04-07T14:40:07.433938837-04:00"
     description: A Helm chart for Kubernetes
-    digest: dd584b250b984a3258bfd9e74e18e492de123a6a141f1695801a1deea0a80264
+    digest: d09cd9c49509c26dc71ff195d171d89372267d648464d218361bd6a68d957de9
     name: ec2-spot-scaling
     type: application
     urls:
@@ -14,7 +14,7 @@ entries:
   test-chart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-04-07T14:32:40.454789358-04:00"
+    created: "2022-04-07T14:40:07.434403614-04:00"
     description: A Helm chart for Kubernetes
     digest: e8200d167d77a3ec7051a18c818387dd3984a421a786b1f841d2f7385e8eda47
     name: test-chart
@@ -22,4 +22,4 @@ entries:
     urls:
     - https://platform9-community.github.io/ec2_spot_scaling/test-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-07T14:32:40.452212273-04:00"
+generated: "2022-04-07T14:40:07.43348895-04:00"
