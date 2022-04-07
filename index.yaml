@@ -7,8 +7,7 @@ entries:
     description: A Helm chart for Kubernetes
     digest: 9092f71a47fffaf03d970bf895032d403f234d0b150e1fb7412dc3601054bcb6
     name: ec2-spot-scaling
-    type: application
     urls:
     - https://github.com/Platform9-Community/ec2_spot_scaling/releases/download/0.1.0/ec2-spot-scaling-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-07T11:50:31.758284859-04:00"
+generated: "2022-04-07T12:16:14.253624627-04:00"
