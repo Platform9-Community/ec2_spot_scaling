@@ -3,6 +3,8 @@ kind: Job
 metadata:
   name: aws-cli-spot-job
   namespace: spot
+  labels:
+    argocd.argoproj.io/instance: scale-spot
 spec:
   template:
     spec:
