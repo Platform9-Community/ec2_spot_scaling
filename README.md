@@ -7,6 +7,8 @@ Set KUBECONFIG Env variable
 export KUBECONFIG=/path/to/cluster.yaml
 ```
 
+Note: These scaling actions take ~4-5 minutes before the nodes are fully converged.
+
 Scale Up
 
 ```
