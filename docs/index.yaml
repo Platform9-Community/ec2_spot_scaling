@@ -8,6 +8,8 @@ entries:
     digest: 561aa8756a0214c1df3d660634750bd74f10b9e1eed6fd5e3ae69fb0ecba4527
     name: ec2-spot-scaling
     type: application
+    sources:
+    - https://platform9-community.github.io/ec2_spot_scaling/
     urls:
     - https://platform9-community.github.io/ec2_spot_scaling/ec2-spot-scaling-0.1.0.tgz
     version: 0.1.0
@@ -19,6 +21,8 @@ entries:
     digest: e8200d167d77a3ec7051a18c818387dd3984a421a786b1f841d2f7385e8eda47
     name: test-chart
     type: application
+    sources:
+    - https://platform9-community.github.io/ec2_spot_scaling/
     urls:
     - https://platform9-community.github.io/ec2_spot_scaling/test-chart-0.1.0.tgz
     version: 0.1.0
